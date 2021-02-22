@@ -1,0 +1,3 @@
+include ':BiometricKeypairEncryption'
+include ':app'
+rootProject.name = "BioKeypairEncryption"
