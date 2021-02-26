@@ -5,10 +5,10 @@ import android.content.SharedPreferences
 import com.biometric.keypair.encryption.utils.BiometricSettings
 
 
-class MyBiometricSettings(context: Context): BiometricSettings {
+class MyBiometricSettings(context: Context, prefName: String): BiometricSettings {
 
     private var prefs: SharedPreferences = context.applicationContext.getSharedPreferences(
-        "MyBioAuthSettings", Context.MODE_PRIVATE)
+        prefName, Context.MODE_PRIVATE)
 
     override fun isEnabled(): BiometricSettings.BiometricFuncStatus {
         return when(prefs.getString("BiometricEnabled", null)){

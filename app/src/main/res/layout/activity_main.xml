@@ -10,34 +10,101 @@
         android:id="@+id/inputWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         android:hint="Encrypt Word"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/encryptBtn"
+        android:id="@+id/encryptBtnAes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Encrypt Word"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/inputWord"
+        android:text="AES Encrypt"
+        app:layout_constraintEnd_toStartOf="@id/decryptBtnAes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/decryptBtn"
-        />
+        app:layout_constraintTop_toBottomOf="@id/inputWord" />
 
     <Button
-        android:id="@+id/decryptBtn"
+        android:id="@+id/decryptBtnAes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Decrypt"
-        app:layout_constraintTop_toTopOf="@id/encryptBtn"
-        app:layout_constraintStart_toEndOf="@id/encryptBtn"
+        android:text="AES Decrypt"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toEndOf="@id/encryptBtnAes"
+        app:layout_constraintTop_toTopOf="@id/encryptBtnAes" />
 
+    <Button
+        android:id="@+id/encryptBtnRsa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="RSA Encrypt"
+        app:layout_constraintEnd_toStartOf="@id/decryptBtnRsa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/encryptBtnAes" />
 
+    <Button
+        android:id="@+id/decryptBtnRsa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSA Decrypt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/encryptBtnRsa"
+        app:layout_constraintTop_toTopOf="@id/encryptBtnRsa" />
+
+    <Button
+        android:id="@+id/checkBiometric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/encryptBtnRsa" />
+
+    <TextView
+        android:id="@+id/aesLabel"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="AES : "
+        app:layout_constraintEnd_toStartOf="@id/aesEncrypt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/aesEncrypt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Result of AES"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/aesLabel"
+        app:layout_constraintTop_toTopOf="@id/aesLabel" />
+
+    <TextView
+        android:id="@+id/rsaLabel"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="RSA : "
+        app:layout_constraintEnd_toStartOf="@id/rsaEncrypt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aesEncrypt" />
+
+    <TextView
+        android:id="@+id/rsaEncrypt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Result of RSA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rsaLabel"
+        app:layout_constraintTop_toTopOf="@id/rsaLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

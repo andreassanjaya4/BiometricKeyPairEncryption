@@ -4,14 +4,15 @@ import java.lang.Exception
 import java.security.PrivateKey
 import java.security.PublicKey
 
-sealed class DecryptCallBack {
-    class Result(val data: String) : DecryptCallBack()
-    class Error(val error: String) : DecryptCallBack()
+sealed class EncryptionCallBack {
+    class Result(val data: String) : EncryptionCallBack()
+    class Error(val error: String) : EncryptionCallBack()
 }
 
 sealed class EnrollResult {
     class Error(val errorString: String, val exception: Exception?) : EnrollResult()
-    object Result: EnrollResult()
+    class Result(val encData: String): EnrollResult()
+    object Pending: EnrollResult()
 }
 
 sealed class AuthResult {

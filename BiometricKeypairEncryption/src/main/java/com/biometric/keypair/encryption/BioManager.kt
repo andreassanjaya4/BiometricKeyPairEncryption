@@ -21,7 +21,7 @@ interface BioManager {
 //    fun resetAll()
 
     @RequiresApi(Build.VERSION_CODES.M)
-    fun enrollAndEncrypt(activity: AppCompatActivity, plainText: String): EnrollResult
+    fun enrollAndEncrypt(activity: AppCompatActivity, plainText: String, biometricUtils: BiometricPromptUtils? = null): EnrollResult
     @RequiresApi(Build.VERSION_CODES.M)
     fun authAndDecrypt(activity: AppCompatActivity, biometricUtils: BiometricPromptUtils): AuthResult
 }
